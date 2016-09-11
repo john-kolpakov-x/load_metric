@@ -18,4 +18,13 @@ void LoadMemory::alloc(size_t byteCount) {
   for (int i = 0; i < byteCount; i++) {
     memory[i] = (unsigned char) rand();
   }
+
+  memorySize = byteCount;
 }
+
+int LoadMemory::startCalcProcess() {
+  int threadId = nextThreadId++;
+  threadMap.insert(pair<int, CalcThread>(threadId, CalcThread(memorySize, memory)));
+  return threadId;
+}
+

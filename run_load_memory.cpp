@@ -63,8 +63,8 @@ void *thread_func(void *arg) {
 }
 
 int main() {
-
   LoadMemory loadMemory;
+  loadMemory.alloc(1000 * 1000);
 
-  loadMemory.alloc(1000000);
+  int threadId = loadMemory.startCalcProcess();
 }
