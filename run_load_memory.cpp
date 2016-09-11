@@ -1,11 +1,15 @@
 #include <iostream>
 #include <unistd.h>
+#include <thread>
+#include "LoadMemory.h"
 
 using namespace std;
 
 void *thread_func(void *arg);
 
-int main() {
+void asd(int x) { }
+
+int main1() {
 
   cout << "Run load memory" << endl;
 
@@ -56,4 +60,11 @@ void *thread_func(void *arg) {
   }
 
   return NULL;
+}
+
+int main() {
+
+  LoadMemory loadMemory;
+
+  loadMemory.alloc(1000000);
 }
