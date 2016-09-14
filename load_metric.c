@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "utils.h"
+#include "Utils.h"
+#include "MemoryBlock.h"
 
 int main(int argc, char **argv) {
 
@@ -10,6 +11,12 @@ int main(int argc, char **argv) {
   printf("rdtscTime() = %llu\n", t2);
 
   printf("t2 - t1 = %llu\n", t2 - t1);
+
+  struct MemoryBlock memoryBlock = createMemoryBlock(10 * 1000 * 1000);
+  
+  
+  
+  freeMemoryBlock(memoryBlock);
 
   return 0;
 }
